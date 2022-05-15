@@ -71,6 +71,8 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11708,56 +11710,213 @@ body {
 
 /* Custom CSS */
 
-.carousel-item {
+.owl-carousel {
+  width: 100%;
   height: 100vh;
-  min-height: 100px;
-  background: no-repeat scroll center scroll;
-  -webkit-background-size: cover;
-  background-size: cover;
 }
 
-.carousel-item::before {
+.slide {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.slide::before {
   content: "";
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  background: #000;
-  opacity: 0.6;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.carousel-caption {
-  bottom: 180px;
-  padding-left: 100px;
-  padding-right: 100px;
+.slide-1 {
+  background-image: url(../assets/img/bg-1.jpg);
 }
 
-.carousel-caption h5 {
-  font-size: 100px;
-  font-weight: 700;
+.slide-2 {
+  background-image: url(../assets/img/bg-2.jpg);
 }
 
-.carousel-caption p {
-  font-size: 18px;
-  top: 2rem;
+.slide-3 {
+  background-image: url(../assets/img/bg-3.jpg);
 }
 
-.slider-btn {
-  margin-top: 30px;
+.slide-4 {
+  background-image: url(../assets/img/bg-4.jpg);
 }
 
-.slider-btn .btn {
-  background-color: #64a19d;
+.slide-5 {
+  background-image: url(../assets/img/bg-5.jpg);
+}
+
+.slide-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   color: #fff;
-  border-radius: 0;
-  padding: 1.5rem 2rem;
-  font-size: 1rem;
-  margin-right: 15px;
+  padding: 0 20%;
 }
 
-.slider-btn .btn-2 {
-  color: #111010;
-  background-color: #fff;
+.slide-content h1 {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 45px;
+  text-transform: uppercase;
+}
+
+.slide-content p {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.slide-content button {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 10px 25px;
+  border: none;
+}
+
+.owl-dots {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 1%;
+}
+
+.owl-dots span {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.owl-dots button {
+  border: none !important;
+  outline: none !important;
+}
+
+.owl-nav button {
+  border: none !important;
+  outline: none !important;
+}
+
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff !important;
+  font-size: 65px !important;
+  font-weight: bolder !important;
+  background:none !important;
+}
+
+.owl-prev {
+  left: 1%;
+}
+
+.owl-next {
+  right: 1%;
+}
+
+/* VLOG */
+
+.video-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 5px 5%;
+}
+
+.video-container .main-video {
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.video-container .main-video video {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.video-container .main-video .title {
+  color: #333;
+  font-size: 23px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.video-container .video-list {
+  background: #fff;
+  border-radius: 5px;
+  height: 520px;
+  overflow-y: scroll;
+}
+
+.video-container .video-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.video-container .video-list::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 50px;
+}
+
+.video-container .video-list::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 50px;
+}
+
+.video-container .video-list .vid video {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.video-container .video-list .vid {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f7f7f7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.1);
+  cursor: pointer;
+}
+
+.video-container .video-list .vid:hover {
+  background: #eee;
+}
+
+.video-container .video-list .vid.active {
+  background: #64a19d;
+}
+
+.video-container .video-list .vid.active .title {
+  color: #fff;
+}
+
+.video-container .video-list .vid .title {
+  color: #333;
+  font-size: 17px;
+}
+
+@media (max-width: 991px) {
+  .video-container {
+      grid-template-columns: 1.5fr 1fr;
+      padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+      grid-template-columns: 1fr;
+      padding: 10px;
+  }
 }
