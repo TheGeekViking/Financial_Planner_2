@@ -11765,7 +11765,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: #fff;
-  padding: 0 20%;
+  padding: 10% 20%;
 }
 
 .slide-content h1 {
@@ -11938,7 +11938,7 @@ body {
   padding: 1em 2em;
   color: #fff;
   border: 0;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
 }
 
